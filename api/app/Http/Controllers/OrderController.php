@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
+
 class OrderController extends Controller
 {
     /**
@@ -15,4 +17,8 @@ class OrderController extends Controller
     }
 
     //
+
+    public function getAllOrders(){
+        return 
+    }
 }
