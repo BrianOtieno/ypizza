@@ -18,5 +18,5 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router){
     $router->get('orders', 'OrderController@getAllOrders');
     $router->get('orders/{id}', 'OrderController@getOneOrder');
-     
+    $router->post('orders', 'OrderController@newOrder')
 });
