@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use Illuminate\Http\Request;
 
-class OrderController extends Controller
-{
+class OrderController extends Controller{
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
+    public function __construct(){
+         
     }
 
-    //
+   
 
     public function getAllOrders(){
-        return 
+        return response()->json(Order::all());
     }
 }
