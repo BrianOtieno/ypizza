@@ -15,7 +15,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => 'api'], function($router){
-    $router->get('order', 'OrderController@getAllOrders');
+$router->group(['prefix' => 'api'], function () use ($router){
+    $router->get('orders', 'OrderController@getAllOrders');
+    $router->get('orders/{id}', 'OrderController@getOneOrder');
      
 });
