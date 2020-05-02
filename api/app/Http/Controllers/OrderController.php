@@ -25,4 +25,10 @@ class OrderController extends Controller{
     public function getOneOrder($id){
         return response()->json(Order::find($id));
     }
+
+    //Add New Order
+    public function newOrder(Request $request){
+        //insert into db and send response
+        return response()->json(Order::create($request), 201);
+    }
 }
