@@ -28,6 +28,14 @@ class OrderController extends Controller{
 
     //Add New Order
     public function newOrder(Request $request){
+        //Validate user input
+        $this->validate($request, [
+            'client_name' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'quantity' => 'required|max:1000|min:8'
+        ]);
+        
         //insert into db and send response
         return response()->json(Order::create($request), 201);
     }
