@@ -36,6 +36,10 @@ class OrderController extends Controller{
             'quantity' => 'required|max:1000|min:8'
         ]);
         
+        //add unique order identifier
+        $order_id = md5(microtime());
+        $request->request->add(['order_id', $order_id]);
+        
         //insert into db and send response
         return response()->json(Order::create($request), 201);
     }
